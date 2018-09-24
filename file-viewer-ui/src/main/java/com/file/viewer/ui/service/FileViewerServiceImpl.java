@@ -28,7 +28,6 @@ import com.file.viewer.ui.entity.DropBoxRecord;
 import com.file.viewer.ui.entity.ServiceProperties;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 
 @Service("fileViewerService")
 public class FileViewerServiceImpl implements FileViewerService {
@@ -99,7 +98,7 @@ public class FileViewerServiceImpl implements FileViewerService {
 	public String uploadFile(String accessKey, String clientId, String serverPath, MultipartFile file) {
 		String responseMessage = null;
 		String uploadDirectory = serviceProperties.getPropertyValue("intermediate.folder");
-		File serverFile = new File(uploadDirectory + File.separator + file.getName());
+		File serverFile = new File(uploadDirectory + File.separator + file.getOriginalFilename());
 		BufferedOutputStream stream = null;
 		try {
 			serverFile.createNewFile();
@@ -172,7 +171,4 @@ public class FileViewerServiceImpl implements FileViewerService {
 		}
 		return records;
 	}
-
-	
-
 }

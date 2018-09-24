@@ -3,6 +3,8 @@ package com.file.viewer.ui.controller;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -77,11 +79,17 @@ public class FileViewerUIController {
 			String localFilePath = fileViewerService.downloadFileFromServer(dropBoxConnection.getAccessKey(),
 					dropBoxConnection.getClientId(), pathValue, localPath);
 			File localFile = new File(localFilePath);
+			String contentType = null;
+			try {
+				contentType = Files.probeContentType(localFile.toPath());
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 			InputStreamResource isr;
 			try {
 				isr = new InputStreamResource(new FileInputStream(localFile));
 				HttpHeaders respHeaders = new HttpHeaders();
-				MediaType mediaType = MediaType.parseMediaType("application/pdf");
+				MediaType mediaType = MediaType.parseMediaType(contentType);
 				respHeaders.setContentType(mediaType);
 				respHeaders.setContentLength(localFile.length());
 				respHeaders.setContentDispositionFormData("attachment", localFile.getName());

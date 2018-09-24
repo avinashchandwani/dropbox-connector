@@ -93,7 +93,7 @@ public class FileViewerServiceController {
 	public String uploadFile(@RequestParam String accessKey, @RequestParam String clientId,
 			@RequestParam String serverFolderName, @RequestParam MultipartFile file) {
 		String uploadDirectory = serviceProperties.getPropertyValue("intermediate.folder");
-		File serverFile = new File(uploadDirectory + File.separator + file.getName());
+		File serverFile = new File(uploadDirectory + File.separator + file.getOriginalFilename());
 		BufferedOutputStream stream =null;
 		try {
 			serverFile.createNewFile();
