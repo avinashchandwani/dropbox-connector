@@ -14,10 +14,14 @@ The application consists of two components:
    port number, service root and intermediate folder where downloads and uploads are handled.
    
    To build the service you require to run mvn clean install on the file-viewer-service project
+   
+   
    The jar will be built file-viewer-service.jar
    This can be executed using java -jar file-viewer-service.jar --Dspring.config.location=file:file-viewer-service.properties
+   
    The UI application can be build similiar to service project and it is available as file-viewer-ui.war.
-   This can be executed using java -jar file-viewer-ui.war --Dspring.config.location=file:file-viewer-ui.properties
+   This can be executed using 
+   java -jar file-viewer-ui.war --Dspring.config.location=file:file-viewer-ui.properties
    
    If we built the root of the project, both jar and war will be built.
 
