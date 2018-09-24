@@ -17,10 +17,15 @@ The application consists of two components:
    
    
    The jar will be built file-viewer-service.jar
-   This can be executed using java -jar file-viewer-service.jar --Dspring.config.location=file:file-viewer-service.properties
+   This can be executed using 
+   
+   
+   java -jar file-viewer-service.jar --Dspring.config.location=file:file-viewer-service.properties
    
    The UI application can be build similiar to service project and it is available as file-viewer-ui.war.
    This can be executed using 
+   
+   
    java -jar file-viewer-ui.war --Dspring.config.location=file:file-viewer-ui.properties
    
    If we built the root of the project, both jar and war will be built.
