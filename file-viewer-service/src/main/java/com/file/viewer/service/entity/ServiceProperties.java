@@ -3,6 +3,13 @@ package com.file.viewer.service.entity;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * A POJO to hold the configuration of the application redily used using
+ * Autowired
+ * 
+ * @author Avinash Chandwani
+ *
+ */
 public class ServiceProperties {
 
 	private Map<String, String> properties;
