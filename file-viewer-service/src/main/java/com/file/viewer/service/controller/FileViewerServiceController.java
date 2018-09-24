@@ -23,7 +23,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.file.viewer.service.entity.ServiceProperties;
 import com.file.viewer.service.service.FileViewerService;
-
+/**
+ * File-Viewer-Service Controller
+ * @author Avinash Chandwani
+ *
+ */
 @RestController
 @RequestMapping("fileviewerservice")
 public class FileViewerServiceController {

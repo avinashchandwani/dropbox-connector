@@ -21,6 +21,12 @@ import org.springframework.web.servlet.view.JstlView;
 import com.file.viewer.ui.entity.DropBoxConnection;
 import com.file.viewer.ui.entity.ServiceProperties;
 
+/**
+ * Initial Config for UI Application
+ * 
+ * @author Avinash Chandwani
+ *
+ */
 @EnableWebMvc
 @ComponentScan
 @Configuration
@@ -60,19 +66,18 @@ public class FileViewerWebAppConfig implements WebMvcConfigurer {
 		serviceProperties.addToProperties("service.root", environment.getRequiredProperty("service.root"));
 		return serviceProperties;
 	}
-	
+
 	@Bean
-	public CommonsMultipartResolver multipartResolver(){
-	    CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
-	    commonsMultipartResolver.setDefaultEncoding("utf-8");
-	    commonsMultipartResolver.setMaxUploadSize(50000000);
-	    return commonsMultipartResolver;
+	public CommonsMultipartResolver multipartResolver() {
+		CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+		commonsMultipartResolver.setDefaultEncoding("utf-8");
+		commonsMultipartResolver.setMaxUploadSize(50000000);
+		return commonsMultipartResolver;
 	}
+
 	@Bean
-	@Scope(
-			  value = WebApplicationContext.SCOPE_SESSION, 
-			  proxyMode = ScopedProxyMode.TARGET_CLASS)
-	public DropBoxConnection getDropBoxConnection(){
+	@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
+	public DropBoxConnection getDropBoxConnection() {
 		return new DropBoxConnection();
 	}
 

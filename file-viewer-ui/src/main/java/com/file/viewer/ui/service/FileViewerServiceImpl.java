@@ -29,6 +29,12 @@ import com.file.viewer.ui.entity.ServiceProperties;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/**
+ * Service Implementation for UI Application
+ * 
+ * @author Avinash Chandwani
+ *
+ */
 @Service("fileViewerService")
 public class FileViewerServiceImpl implements FileViewerService {
 
@@ -65,7 +71,7 @@ public class FileViewerServiceImpl implements FileViewerService {
 		}
 		return fileLocalPath;
 	}
-	
+
 	@Override
 	public String downloadFolderContents(String accessKey, String clientId, String pathValue, String localPath) {
 		String fileLocalPath = null;
@@ -136,7 +142,7 @@ public class FileViewerServiceImpl implements FileViewerService {
 			System.out.println(responseMessage);
 			JSONObject responseObj = new JSONObject(responseMessage);
 			responseMessage = responseObj.getString("Status");
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -157,7 +163,7 @@ public class FileViewerServiceImpl implements FileViewerService {
 		String hostName = serviceProperties.getPropertyValue("service.host");
 		String portNumber = serviceProperties.getPropertyValue("service.port");
 		String serviceBaseName = serviceProperties.getPropertyValue("service.root");
-		
+
 		ResponseEntity<String> response = restTemplate.build().exchange(
 				protocol + "://" + hostName + ":" + portNumber + "/" + serviceBaseName + "/getFilesFromFolder",
 				HttpMethod.POST, requestEntity, String.class);

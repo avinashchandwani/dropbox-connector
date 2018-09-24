@@ -8,6 +8,12 @@ import org.springframework.core.env.Environment;
 
 import com.file.viewer.service.entity.ServiceProperties;
 
+/**
+ * Initial Configuration for REST Service Application
+ * 
+ * @author Avinash Chandwani
+ *
+ */
 @Configuration
 @PropertySource(value = "${spring.config.location}")
 public class FileViewerInitialConfig {

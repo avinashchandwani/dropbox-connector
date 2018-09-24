@@ -6,10 +6,15 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
+/**
+ * Spring boot starter for UI Application
+ * 
+ * @author Avinash Chandwani
+ *
+ */
 @SpringBootApplication
 @ComponentScan(basePackageClasses = { com.file.viewer.ui.config.FileViewerWebAppConfig.class }, basePackages = {
-		"com.file.viewer.ui.service",
-		"com.file.viewer.ui.config", "com.file.viewer.ui.controller" })
+		"com.file.viewer.ui.service", "com.file.viewer.ui.config", "com.file.viewer.ui.controller" })
 public class FileViewerWebApplication extends SpringBootServletInitializer {
 
 	@Override

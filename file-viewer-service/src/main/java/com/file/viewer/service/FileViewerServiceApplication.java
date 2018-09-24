@@ -8,6 +8,12 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
+/**
+ * Spring Boot Starter Class for REST Service Application
+ * 
+ * @author Avinash Chandwani
+ *
+ */
 @ComponentScan(basePackageClasses = { com.file.viewer.service.controller.FileViewerServiceController.class,
 		com.file.viewer.service.service.FileViewerService.class,
 		com.file.viewer.service.config.FileViewerInitialConfig.class })

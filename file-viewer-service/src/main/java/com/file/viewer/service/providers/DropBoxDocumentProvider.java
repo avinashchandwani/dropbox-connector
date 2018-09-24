@@ -25,6 +25,14 @@ import com.dropbox.core.v2.users.FullAccount;
 import com.file.viewer.service.entity.DropBoxConnection;
 import com.file.viewer.service.entity.DropBoxRecord;
 
+/**
+ * Utility to communicate with dropbox backend for fetching the contents of a
+ * folder, downloading a file, downloading a folder and uploading a file to a
+ * given folder in dropbox
+ * 
+ * @author Avinash Chandwani
+ *
+ */
 public class DropBoxDocumentProvider {
 	private DropBoxConnection connection;
 
@@ -59,7 +67,7 @@ public class DropBoxDocumentProvider {
 
 	public boolean uploadAFile(String serverFolderName, String fileName) {
 		boolean isUploaded = false;
-		if(serverFolderName.isEmpty() || serverFolderName == null){
+		if (serverFolderName.isEmpty() || serverFolderName == null) {
 			serverFolderName = "/";
 		}
 		DbxClientV2 client = getClient();
@@ -78,7 +86,7 @@ public class DropBoxDocumentProvider {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
 				in.close();
 			} catch (IOException e) {
@@ -146,14 +154,15 @@ public class DropBoxDocumentProvider {
 			for (;;) {
 				for (Metadata metadata : result.getEntries()) {
 					DropBoxRecord dropBoxRecord = null;
-					String type= null;
+					String type = null;
 					if ((metadata instanceof FileMetadata)) {
 						type = "file";
 					} else if ((metadata instanceof FolderMetadata)) {
 						type = "folder";
 					}
 					String path = metadata.getPathLower();
-					dropBoxRecord = new DropBoxRecord(path.substring(0,path.lastIndexOf("/")+1), metadata.getName(), type);
+					dropBoxRecord = new DropBoxRecord(path.substring(0, path.lastIndexOf("/") + 1), metadata.getName(),
+							type);
 					filesAndFolders.add(dropBoxRecord);
 				}
 				if (!result.getHasMore()) {

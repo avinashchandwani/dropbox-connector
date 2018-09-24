@@ -10,6 +10,12 @@ import com.file.viewer.service.entity.DropBoxRecord;
 import com.file.viewer.service.providers.DropBoxDocumentProvider;
 import com.google.gson.Gson;
 
+/**
+ * Service Implementation
+ * 
+ * @author Avinash Chandwani
+ *
+ */
 @Service("fileViewerService")
 public class FileViewerServiceImpl implements FileViewerService {
 
@@ -42,9 +48,9 @@ public class FileViewerServiceImpl implements FileViewerService {
 		DropBoxDocumentProvider documentProvider = new DropBoxDocumentProvider(connection);
 		boolean uploadStatus = documentProvider.uploadAFile(serverFolderName, fileName);
 		JSONObject responseJson = new JSONObject();
-		if(uploadStatus){
+		if (uploadStatus) {
 			responseJson.put("Status", "Uploaded successfully");
-		}else{
+		} else {
 			responseJson.put("status", "Upload failed");
 		}
 		return responseJson.toString();

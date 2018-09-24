@@ -27,6 +27,12 @@ import com.file.viewer.ui.entity.DropBoxRecord;
 import com.file.viewer.ui.entity.ServiceProperties;
 import com.file.viewer.ui.service.FileViewerService;
 
+/**
+ * Spring UI Application Controller Entity
+ * 
+ * @author Avinash Chandwani
+ *
+ */
 @Controller
 public class FileViewerUIController {
 

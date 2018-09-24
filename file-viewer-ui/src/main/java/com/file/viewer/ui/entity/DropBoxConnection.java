@@ -1,5 +1,10 @@
 package com.file.viewer.ui.entity;
-
+/**
+ * A class to hold DropBox Connection information
+ * 
+ * @author Avinash Chandwani
+ *
+ */
 public class DropBoxConnection {
 	private String accessKey;
 	private String clientId;

@@ -1,5 +1,11 @@
 package com.file.viewer.ui.entity;
-
+/**
+ * A POJO representation of DropBox File/Folder record this is used to display
+ * on UI and hold the list for a given folder
+ * 
+ * @author chaav03
+ *
+ */
 public class DropBoxRecord {
 	private String fileName;
 	private String parentPath;
