@@ -1,0 +1,10 @@
+com/file/viewer/service/test/App.class
+com/file/viewer/service/config/FileViewerInitialConfig.class
+com/file/viewer/service/entity/DropBoxConnection.class
+com/file/viewer/service/service/FileViewerServiceImpl.class
+com/file/viewer/service/providers/DropBoxDocumentProvider.class
+com/file/viewer/service/service/FileViewerService.class
+com/file/viewer/service/FileViewerServiceApplication.class
+com/file/viewer/service/controller/FileViewerServiceController.class
+com/file/viewer/service/entity/ServiceProperties.class
+com/file/viewer/service/entity/DropBoxRecord.class
